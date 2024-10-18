@@ -14,7 +14,7 @@ function EditPost() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/posts/${id}`);
+        const response = await axios.get(`https://post-management-system-backend.onrender.com/api/posts/${id}`);
         setPost(response.data);
       } catch (error) {
         console.error('Error fetching post:', error);
@@ -27,7 +27,7 @@ function EditPost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/posts/${id}`, post);
+      await axios.put(`https://post-management-system-backend.onrender.com/api/posts/${id}`, post);
       navigate('/');
     } catch (error) {
       console.error('Error updating post:', error);

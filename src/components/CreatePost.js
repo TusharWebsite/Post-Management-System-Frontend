@@ -27,7 +27,7 @@ function CreatePost() {
     formData.append('image', post.image);
 
     try {
-      await axios.post('http://localhost:5000/api/posts', formData, {
+      await axios.post('https://post-management-system-backend.onrender.com/api/posts', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

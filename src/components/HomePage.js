@@ -8,7 +8,7 @@ function HomePage() {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/posts/getPost');
+      const response = await axios.get('https://post-management-system-backend.onrender.com/api/posts/getPost');
       setPosts(response.data);
     } catch (error) {
       console.error('Error fetching posts:', error);
@@ -17,7 +17,7 @@ function HomePage() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${id}`);
+      await axios.delete(`https://post-management-system-backend.onrender.com/api/posts/${id}`);
       setPosts(posts.filter((post) => post._id !== id));
     } catch (error) {
       console.error('Error deleting post:', error);
@@ -54,7 +54,7 @@ function HomePage() {
             <div key={post._id} className="bg-white shadow-md rounded-lg overflow-hidden">
               {post.image && (
                 <img 
-                  src={`http://localhost:5000/${post.image}`} 
+                  src={`https://post-management-system-backend.onrender.com/${post.image}`} 
                   alt={post.title} 
                   className="w-full h-48 object-cover"
                 />
